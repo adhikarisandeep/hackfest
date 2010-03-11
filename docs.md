@@ -3,4 +3,4 @@ layout: default
 title: Documentation
 ---
 
-Check out our [documentation](docs/_build/html/index.html).
+Check out our [documentation](docs/build/html/index.html).
