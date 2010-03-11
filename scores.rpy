@@ -1,15 +1,33 @@
-from twisted.web import resource
-import teams
+'''
+HTTP resource for getting the current scores for the competing teams.
 
-class Scores(resource.Resource):
+This is not a regular Python file.  It is by twisted to provide a 
+URL resource. More information can be found at
+http://twistedmatrix.com/documents/current/web/howto/using-twistedweb.html
+'''
+
+from twisted.web import resource
+import hackfest
+
+class CurrentScores(resource.Resource):
+    '''
+    URL resource to get the current scores.
+    '''
+    def __init__(self, teams):
+        self.teams = teams
+
     def render_GET(self, request):
+        '''
+        Get the current scores as JSON.
+        
+        This is called when the url to this file is requested
+        via a http GET request.
+        '''
         teamsjs = []
         for t in teams.teams:
             teamsjs.append(t.json() + '\n')
         s = '[' + ', '.join(teamsjs) + ']'
         return s
 
-    def render_POST(self, request):
-        return request.content.getvalue()
-
-resource = Scores()
+hackfest.start_hackfest()
+resource = CurrentScores(hackfest.teams)
