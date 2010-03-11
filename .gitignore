@@ -1,6 +1,2 @@
 
 .pyc*
-
-_site/*
-
-!_site/docs
