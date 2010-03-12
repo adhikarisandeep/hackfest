@@ -19,12 +19,12 @@ Build
 
 Installing on Ubuntu::
 
-    sudo apt-get install twisted
+    sudo apt-get install python-twisted
     
 Then to run the program::
   
-    cd /path/to/hackfest
-    twistd -ny hackfest.tac
+    cd /path/to/hackfest/scoring
+    sh hackfest.sh
 
 This will start the ``twisted`` web server which will serve the 
 program at <http://localhost:8080/>.

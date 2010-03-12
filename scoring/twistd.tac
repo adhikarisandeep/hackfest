@@ -1,3 +1,7 @@
+# This is the configuration file for the Twisted web server.
+#
+# http://twistedmatrix.com/documents/current/web/howto/using-twistedweb.html
+
 from twisted.application import internet, service
 from twisted.web import static, server, script
 import os
