@@ -1,30 +1,19 @@
 hackfest
 ========
+This is `hackfest`, the infrastructure for a network security 
+competition to be held on May 7, 2010 at Louisiana Tech University.
 
-So far, this is a simple prototype of the scoring server/client for
-the ``hackfest`` competition.
-
-Check out the website, <http://jonwaltman.github.com/hackfest/>.
-
-
-Dependencies
-------------
-
-`Python <http://www.python.org/>`_
-
-`Twisted <http://twistedmatrix.com/trac/>`_
-
-Build
+Links
 -----
+Checkout the website, `hackfest <http://jonwaltman.github.com/hackfest/>`_
 
-Installing on Ubuntu::
+You can also join our 
+`Google Group <http://groups.google.com/group/hackfest2010/>`_
 
-    sudo apt-get install python-twisted
-    
-Then to run the program::
-  
-    cd /path/to/hackfest/scoring
-    sh hackfest.sh
+Some of the tools we use:
 
-This will start the ``twisted`` web server which will serve the 
-program at <http://localhost:8080/>.
+ * `Git <http://git-scm.com/>`_
+ * `Github <https://github.com/>`_
+ * `Python-2.6 <http://www.python.org/download/>`_
+ * `Twisted-8.2 <http://twistedmatrix.com/trac/>`_
+ * `Ubuntu-9.10 <http://www.ubuntu.com/GetUbuntu/download>`_
