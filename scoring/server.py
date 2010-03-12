@@ -158,31 +158,7 @@ teams = [
             SSH('whitey', 'localhost'),
             )),
     ]
-
-def _setup_server():
-    '''
-    Preliminary setup for the server.
-    '''
-    # We only want one running instance of the server
-    try:
-        with open("server.pid") as f:
-            p = f.read()
-        try:
-            os.kill(int(p), 9)
-            print >>sys.stderr, "server: Killed previous instance"
-        except Exception as e:
-            print >>sys.stderr, "server: Failed to kill previous instance" \
-                "[pid=%s]:" % p, e
-    except:
-        pass
-    # Save our pid
-    with open("server.pid", 'w') as f:
-        f.write(str(os.getpid()))
-    # Add hook to remove file on exit
-    import atexit
-    atexit.register(lambda: os.remove("server.pid"))
     
-
 def main():
     '''
     Start the hackfest competition.
@@ -196,9 +172,12 @@ def main():
                       metavar='secs', default=5)
     global OPTS, ARGS
     OPTS, ARGS = parser.parse_args()
-    _setup_server()
+
+    # Save our pid for easy killing
+    with open("server.pid", 'w') as f:
+        f.write(str(os.getpid()))
+
     print >>sys.stderr, "server: Hackfest has started!"
-    # Update the teams
     while 1:
         for t in teams:
             t.update()
