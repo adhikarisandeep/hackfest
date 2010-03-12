@@ -30,7 +30,7 @@ class Team(object):
         self.time = None
         self.logdir = "logs/%s/" % name
         try:
-            os.mkdir(self.logdir)
+            os.makedirs(self.logdir)
         except:
             pass
         
