@@ -16,7 +16,7 @@ Running
 
 To run the program::
 
-    sh hackfest.sh
+    ./hackfest.sh
 
 This will start the scoring server and also start the `twistd` web
 server which will serve the site at <http://localhost:8080/>.
